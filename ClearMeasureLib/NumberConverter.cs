@@ -12,7 +12,7 @@ namespace ClearMeasureLib
         /// <param name="input">The input value. Any input value less than 1 will return an empty list.</param>
         /// <param name="rules">The list of conversion rules to apply.</param>
         /// <returns>An enumerable of strings representing the converted values.</returns>
-        public IEnumerable<string> GenerateList(int input, List<ConversionRule> rules)
+        public IEnumerable<string> GenerateList(int input, IEnumerable<ConversionRule> rules)
         {
             if (input <= 0)
             {
@@ -32,7 +32,7 @@ namespace ClearMeasureLib
         /// <param name="value">The numeric value to convert.</param>
         /// <param name="rules">The list of conversion rules to apply.</param>
         /// <returns>The converted string representation of the value.</returns>
-        public string ConvertValue(int value, List<ConversionRule> rules)
+        public string ConvertValue(int value, IEnumerable<ConversionRule> rules)
         {
             string replacement = string.Empty;
 
