@@ -41,6 +41,21 @@ namespace ClearMeasureTests
         }
 
         [TestMethod]
+        public void GenerateList_NullRules_ReturnsOriginalValues()
+        {
+            // Arrange
+            var converter = new NumberConverter();
+            var input = 1;
+            List<ConversionRule> rules = null!;
+
+            // Act
+            var result = converter.GenerateList(input, rules);
+
+            // Assert
+            CollectionAssert.AreEqual(new[] { "1", }, result.ToArray());
+        }
+
+        [TestMethod]
         public void ConvertValue_NoRules_ReturnsOriginalValue()
         {
             // Arrange

@@ -36,11 +36,14 @@ namespace ClearMeasureLib
         {
             string replacement = string.Empty;
 
-            foreach (var rule in rules)
-            {
-                if (value % rule.DivisibleBy == 0)
+            if(rules != null) 
+            { 
+                foreach (var rule in rules)
                 {
-                    replacement += rule.ReplacementText;
+                    if (value % rule.DivisibleBy == 0)
+                    {
+                        replacement += rule.ReplacementText;
+                    }
                 }
             }
 
